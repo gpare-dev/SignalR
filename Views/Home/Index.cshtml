@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center">
+    <div class="container row row-cols-1 row-cols-xl-3">
+        <div class="col">
+            <div class="card shadow-lg">
+                <div class="card-header py-2">
+                    <p class="my-0 fw-normal">To Do</p>
+                </div>
+                <div class="card-body category-card drop">
+                    <button type="button" id="card-todo" class="w-50 btn btn-sm btn-outline-primary open-add-task" data-bs-toggle="modal" data-bs-target="#add-task" data-bs-category-name="To Do" data-bs-category-card="#card-todo">Add task</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header py-2">
+                    <p class="my-0 fw-normal">In Progress</p>
+                </div>
+                <div class="card-body category-card drop">
+                    <button type="button" id="card-in-progress" class="w-50 btn btn-sm btn-outline-primary open-add-task" data-bs-toggle="modal" data-bs-target="#add-task" data-bs-category-name="In Progress" data-bs-category-card="#card-in-progress">Add task</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header py-2">
+                    <p class="my-0 fw-normal">Done</p>
+                </div>
+                <div class="card-body category-card drop">
+                    <button type="button" id="card-done" class="w-50 btn btn-sm btn-outline-primary open-add-task" data-bs-toggle="modal" data-bs-target="#add-task" data-bs-category-name="Done" data-bs-category-card="#card-done">Add task</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="add-task" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="add-task" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="add-task-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <textarea id="task-description" rows="5" class="form-control"></textarea>
+                            <input type="hidden" id="category-card">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="edit-task" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="edit-task" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="edit-task-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit task</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <textarea id="task-new-description" rows="5" class="form-control"></textarea>
+                            <input type="hidden" id="task-id">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
